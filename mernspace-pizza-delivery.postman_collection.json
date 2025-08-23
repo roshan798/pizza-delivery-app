@@ -460,7 +460,107 @@
 							"name": "getAll",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCTS}}",
+									"host": [
+										"{{PRODUCTS}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"TEST Pizza \",\r\n    \"description\": \"Classic cheese margherita pizza with fresh basil and mozzarella.\",\r\n    \"imageUrl\": \"https://example.com/images/margherita.jpg\",\r\n    \"tenantId\": \"1\",\r\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 100\r\n            }\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 150\r\n            }\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": {\r\n                \"cheese\": 30\r\n            }\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"value\": \"small\"\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"value\": false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCTS}}",
+									"host": [
+										"{{PRODUCTS}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Margherita Pizza\",\r\n    \"description\": \"Classic cheese margherita pizza with fresh basil and mozzarella.\",\r\n    \"imageUrl\": \"https://example.com/images/margherita.jpg\",\r\n    \"tenantId\": \"1\",\r\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 100\r\n            }\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 150\r\n            }\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": {\r\n                \"cheese\": 30\r\n            }\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"value\": \"small\"\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"value\": false\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{PRODUCTS}}/68aa355d271e49fd3052a3f6",
+									"host": [
+										"{{PRODUCTS}}"
+									],
+									"path": [
+										"68aa355d271e49fd3052a3f6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test name updated\",\r\n    \"description\": \"Classic cheese margherita pizza with fresh basil and mozzarella.\",\r\n    \"imageUrl\": \"https://example.com/images/margherita.jpg\",\r\n    \"tenantId\": \"1\",\r\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 100\r\n            }\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 150\r\n            }\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": {\r\n                \"cheese\": 30\r\n            }\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"value\": \"small\"\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"value\": false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCTS}}/68aa362b271e49fd3052a413",
+									"host": [
+										"{{PRODUCTS}}"
+									],
+									"path": [
+										"68aa362b271e49fd3052a413"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test name updated\",\r\n    \"description\": \"Classic cheese margherita pizza with fresh basil and mozzarella.\",\r\n    \"imageUrl\": \"https://example.com/images/margherita.jpg\",\r\n    \"tenantId\": \"1\",\r\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 100\r\n            }\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 150\r\n            }\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": {\r\n                \"cheese\": 30\r\n            }\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"value\": \"small\"\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"value\": false\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{PRODUCTS}}/68aa362b271e49fd3052a413",
+									"host": [
+										"{{PRODUCTS}}"
+									],
+									"path": [
+										"68aa362b271e49fd3052a413"
+									]
+								}
 							},
 							"response": []
 						}
