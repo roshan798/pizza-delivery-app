@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "b19d392b-28a4-4b15-89d0-a79601b6683f",
+		"name": "mernspace-pizza-delivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27455690"
+	},
+	"item": [
+		{
+			"name": "auth-service",
+			"item": [
+				{
+					"name": "USERS",
+					"item": [
+						{
+							"name": "get-all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/{{AUTH}}/self",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{AUTH}}",
+										"self"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tenants",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Default Tenant\",\r\n    \"address\" : \"charhi, hazaribagh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{TENANTS}}",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{TENANTS}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Default Tenant\",\r\n    \"address\" : \"charhi, hazaribagh\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{TENANTS}}",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{TENANTS}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByTenantId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Default Tenant\",\r\n    \"address\" : \"charhi, hazaribagh\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{TENANTS}}/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{TENANTS}}",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateTenantById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Default Tenant update\",\r\n    \"address\" : \"charhi, hazaribagh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{TENANTS}}/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{TENANTS}}",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteByTenantId",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Default Tenant update\",\r\n    \"address\" : \"charhi, hazaribagh\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{TENANTS}}/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{TENANTS}}",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"roshan@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/{{AUTH}}/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{AUTH}}",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"roshan2@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/{{AUTH}}/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"{{AUTH}}",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Jul 2025 16:07:27 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"a6-X5+uOmk+2N5kd3RFACM02O1mNeo\""
+								},
+								{
+									"key": "Replit-Cluster",
+									"value": "pike"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid input data\",\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"roshan2@gmail.com\",\n            \"msg\": \"Email already exists\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"roshan2@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/{{AUTH}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{AUTH}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "self",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/{{AUTH}}/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{AUTH}}",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/{{AUTH}}/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{AUTH}}",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/{{AUTH}}/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{AUTH}}",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "catalogue-service",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"TEST Pizza \",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"100\"\r\n            ]\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"150\"\r\n            ]\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": [\r\n                \"30\"\r\n            ]\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"widgetType\": \"radio\",\r\n            \"defaultValue\": \"small\",\r\n            \"availableOptions\": [\r\n                \"small\",\r\n                \"medium\",\r\n                \"large\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"widgetType\": \"switch\",\r\n            \"defaultValue\": false,\r\n            \"availableOptions\": [\r\n                \"true\",\r\n                \"false\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CATAGORIES}}",
+									"host": [
+										"{{CATAGORIES}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CATAGORIES}}",
+									"host": [
+										"{{CATAGORIES}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pizza\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"100\"\r\n            ]\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"150\"\r\n            ]\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": [\r\n                \"30\"\r\n            ]\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"widgetType\": \"radio\",\r\n            \"defaultValue\": \"small\",\r\n            \"availableOptions\": [\r\n                \"small\",\r\n                \"medium\",\r\n                \"large\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"widgetType\": \"switch\",\r\n            \"defaultValue\": false,\r\n            \"availableOptions\": [\r\n                \"true\",\r\n                \"false\"\r\n            ]\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{CATAGORIES}}/68a8b747670661e49c5b96e2",
+									"host": [
+										"{{CATAGORIES}}"
+									],
+									"path": [
+										"68a8b747670661e49c5b96e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateByID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pizza delete updated\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"100\"\r\n            ]\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"150\"\r\n            ]\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": [\r\n                \"30\"\r\n            ]\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"widgetType\": \"radio\",\r\n            \"defaultValue\": \"small\",\r\n            \"availableOptions\": [\r\n                \"small\",\r\n                \"medium\",\r\n                \"large\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"widgetType\": \"switch\",\r\n            \"defaultValue\": false,\r\n            \"availableOptions\": [\r\n                \"true\",\r\n                \"false\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CATAGORIES}}/68a8b731670661e49c5b96da",
+									"host": [
+										"{{CATAGORIES}}"
+									],
+									"path": [
+										"68a8b731670661e49c5b96da"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pizza delete updated\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"100\"\r\n            ]\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": [\r\n                \"150\"\r\n            ]\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": [\r\n                \"30\"\r\n            ]\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"widgetType\": \"radio\",\r\n            \"defaultValue\": \"small\",\r\n            \"availableOptions\": [\r\n                \"small\",\r\n                \"medium\",\r\n                \"large\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"widgetType\": \"switch\",\r\n            \"defaultValue\": false,\r\n            \"availableOptions\": [\r\n                \"true\",\r\n                \"false\"\r\n            ]\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{CATAGORIES}}/68a8b731670661e49c5b96da",
+									"host": [
+										"{{CATAGORIES}}"
+									],
+									"path": [
+										"68a8b731670661e49c5b96da"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "AUTH",
+			"value": "auth"
+		},
+		{
+			"key": "USERS",
+			"value": "users"
+		},
+		{
+			"key": "TENANTS",
+			"value": "tenants"
+		},
+		{
+			"key": "CATALOG_SERVICE",
+			"value": "http://localhost:8082"
+		},
+		{
+			"key": "CATAGORIES",
+			"value": "{{CATALOG_SERVICE}}/categories"
+		},
+		{
+			"key": "PRODUCTS",
+			"value": "{{CATALOG_SERVICE}}/products"
+		}
+	]
+}
