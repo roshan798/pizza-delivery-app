@@ -1,0 +1,6 @@
+[submodule "auth-service"]
+	path = auth-service
+	url = https://github.com/roshan798/pizza-delivery-app-auth-service
+[submodule "catalog service"]
+	path = catalog service
+	url = https://github.com/roshan798/pizza-delivery-catalog-service
