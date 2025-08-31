@@ -18,13 +18,32 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_URL}}/{{AUTH}}/self",
+									"raw": "{{USERS}}",
 									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"{{AUTH}}",
-										"self"
+										"{{USERS}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-manager",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"mangal1\",\r\n    \"lastName\": \"panday1\",\r\n    \"email\": \"mangal@gmail2.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USERS}}",
+									"host": [
+										"{{USERS}}"
 									]
 								}
 							},
@@ -168,7 +187,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"roshan@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"roshan@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"role\" : \"manager\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -261,7 +280,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"roshan2@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"raw": "{\r\n        \"email\": \"roshan2@gmail.com\",\r\n    \"password\": \"password123\"\r\n}\r\n// {\r\n//     \"email\": \"manager@gmail.com\",\r\n//     \"password\": \"manager@123\"\r\n// }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -480,13 +499,13 @@
 									"formdata": [
 										{
 											"key": "data",
-											"value": "{\n    \"name\": \"pizza\",\n    \"description\": \"Healthy veggie pizza loaded with fresh vegetables and mozzarella cheese.\",\n    \"imageUrl\": \"https://example.com/images/veggie-delight.jpg\",\n    \"tenantId\": \"1\",\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\n    \"priceConfiguration\": {\n        \"small\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 90\n            }\n        },\n        \"medium\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 140\n            }\n        },\n        \"extraVeggies\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"veggies\": 25\n            }\n        },\n        \"extraCheese\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"cheese\": 30\n            }\n        },\n        \"extraPepperoni\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"pepperoni\": 40\n            }\n        }\n    },\n    \"attributes\": [\n        {\n            \"name\": \"Size\",\n            \"value\": \"medium\"\n        },\n        {\n            \"name\": \"Cheese Burst\",\n            \"value\": false\n        },\n        {\n            \"name\": \"Gluten Free\",\n            \"value\": true\n        }\n    ]\n}",
+											"value": "{\n    \"name\": \"Tomato\",\n    \"description\": \"Healthy veggie pizza loaded with fresh vegetables and mozzarella cheese.\",\n    \"imageUrl\": \"https://example.com/images/veggie-delight.jpg\",\n    \"tenantId\": \"2\",\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\n    \"priceConfiguration\": {\n        \"small\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 90\n            }\n        },\n        \"medium\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 140\n            }\n        },\n        \"extraVeggies\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"veggies\": 25\n            }\n        },\n        \"extraCheese\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"cheese\": 30\n            }\n        },\n        \"extraPepperoni\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"pepperoni\": 40\n            }\n        }\n    },\n    \"attributes\": [\n        {\n            \"name\": \"Size\",\n            \"value\": \"medium\"\n        },\n        {\n            \"name\": \"Cheese Burst\",\n            \"value\": false\n        },\n        {\n            \"name\": \"Gluten Free\",\n            \"value\": true\n        }\n    ]\n}",
 											"type": "text"
 										},
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/C:/Users/rosha/OneDrive/Desktop/1747282628068.jpeg"
+											"src": "/C:/Users/rosha/OneDrive/Desktop/GzjkVLkbwAA847j.jpeg"
 										}
 									]
 								},
@@ -512,12 +531,12 @@
 									"raw": "{\r\n    \"name\": \"Margherita Pizza\",\r\n    \"description\": \"Classic cheese margherita pizza with fresh basil and mozzarella.\",\r\n    \"imageUrl\": \"https://example.com/images/margherita.jpg\",\r\n    \"tenantId\": \"1\",\r\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\r\n    \"priceConfiguration\": {\r\n        \"small\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 100\r\n            }\r\n        },\r\n        \"medium\": {\r\n            \"priceType\": \"base\",\r\n            \"availableOptions\": {\r\n                \"price\": 150\r\n            }\r\n        },\r\n        \"extraCheese\": {\r\n            \"priceType\": \"additional\",\r\n            \"availableOptions\": {\r\n                \"cheese\": 30\r\n            }\r\n        }\r\n    },\r\n    \"attributes\": [\r\n        {\r\n            \"name\": \"Size\",\r\n            \"value\": \"small\"\r\n        },\r\n        {\r\n            \"name\": \"Cheese Burst\",\r\n            \"value\": false\r\n        }\r\n    ]\r\n}"
 								},
 								"url": {
-									"raw": "{{PRODUCTS}}/68aa355d271e49fd3052a3f6",
+									"raw": "{{PRODUCTS}}/68b464412f8492179ce353dd",
 									"host": [
 										"{{PRODUCTS}}"
 									],
 									"path": [
-										"68aa355d271e49fd3052a3f6"
+										"68b464412f8492179ce353dd"
 									]
 								}
 							},
@@ -533,18 +552,25 @@
 									"formdata": [
 										{
 											"key": "data",
-											"value": "{\n    \"name\": \"i3\",\n    \"description\": \"Healthy veggie pizza loaded with fresh vegetables and mozzarella cheese.\",\n    \"imageUrl\": \"https://example.com/images/veggie-delight.jpg\",\n    \"tenantId\": \"1\",\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\n    \"priceConfiguration\": {\n        \"small\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 90\n            }\n        },\n        \"medium\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 140\n            }\n        },\n        \"extraVeggies\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"veggies\": 25\n            }\n        },\n        \"extraCheese\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"cheese\": 30\n            }\n        },\n        \"extraPepperoni\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"pepperoni\": 40\n            }\n        }\n    },\n    \"attributes\": [\n        {\n            \"name\": \"Size\",\n            \"value\": \"medium\"\n        },\n        {\n            \"name\": \"Cheese Burst\",\n            \"value\": false\n        },\n        {\n            \"name\": \"Gluten Free\",\n            \"value\": true\n        }\n    ]\n}",
-											"type": "text"
+											"value": "{\n    \"name\": \"i3343453\",\n    \"description\": \"Healthy veggie pizza loaded with fresh vegetables and mozzarella cheese.\",\n    \"imageUrl\": \"https://example.com/images/veggie-delight.jpg\",\n    \"tenantId\": \"1\",\n    \"categoryId\": \"68a8b747670661e49c5b96e2\",\n    \"priceConfiguration\": {\n        \"small\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 90\n            }\n        },\n        \"medium\": {\n            \"priceType\": \"base\",\n            \"availableOptions\": {\n                \"price\": 140\n            }\n        },\n        \"extraVeggies\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"veggies\": 25\n            }\n        },\n        \"extraCheese\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"cheese\": 30\n            }\n        },\n        \"extraPepperoni\": {\n            \"priceType\": \"additional\",\n            \"availableOptions\": {\n                \"pepperoni\": 40\n            }\n        }\n    },\n    \"attributes\": [\n        {\n            \"name\": \"Size\",\n            \"value\": \"medium\"\n        },\n        {\n            \"name\": \"Cheese Burst\",\n            \"value\": false\n        },\n        {\n            \"name\": \"Gluten Free\",\n            \"value\": true\n        }\n    ]\n}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/rosha/OneDrive/Desktop/WhatsApp Image 2024-10-22 at 20.16.56_564c1583.jpg",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "{{PRODUCTS}}/68ab3ec8d6c7fc30759a05a6",
+									"raw": "{{PRODUCTS}}/68b464412f8492179ce353dd",
 									"host": [
 										"{{PRODUCTS}}"
 									],
 									"path": [
-										"68ab3ec8d6c7fc30759a05a6"
+										"68b464412f8492179ce353dd"
 									]
 								}
 							},
@@ -609,7 +635,7 @@
 		},
 		{
 			"key": "USERS",
-			"value": "users"
+			"value": "{{BASE_URL}}/users"
 		},
 		{
 			"key": "TENANTS",
