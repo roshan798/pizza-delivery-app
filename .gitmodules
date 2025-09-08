@@ -4,3 +4,7 @@
 [submodule "catalog service"]
 	path = catalog service
 	url = https://github.com/roshan798/pizza-delivery-catalog-service
+
+[submodule "admin-dashboard"]
+	path = admin-dashboard
+	url = https://github.com/roshan798/pizza-app-admin-dashboard
