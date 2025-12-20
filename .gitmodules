@@ -8,3 +8,8 @@
 [submodule "admin-dashboard"]
 	path = admin-dashboard
 	url = https://github.com/roshan798/pizza-app-admin-dashboard
+	
+[submodule "client-app"]
+	path = client-app
+	url = https://github.com/roshan798/pizza-delivery-client-UI
+
