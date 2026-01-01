@@ -1,0 +1,25 @@
+{
+    "name": "pizza-delivery-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "Root project for pizza delivery microservices",
+    "author": "Roshan Kumar",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^9.2.1",
+        "cross-env": "^10.1.0"
+    },
+    "scripts": {
+        "dev": "npm run start:all",
+        "start:all": "concurrently \"npm run start:auth\" \"npm run start:catalog\" \"npm run start:admin\" \"npm run start:kong\"",
+        "stop:all": "concurrently \"npm run stop:auth\" \"npm run stop:catalog\"",
+        "start:auth": "cd auth-service && docker ps -q -f name=mernpg-container >nul 2>&1 && npm run dev || (npm run start:DB && npm run dev)",
+        "stop:auth": "cd auth-service && npm run stop:DB",
+        "start:catalog": "cd \"catalog service\" && docker ps -q -f name=mernmongo-container >nul 2>&1 && npm run dev || (npm run start:DB && npm run dev)",
+        "stop:catalog": "cd \"catalog service\" && npm run stop:DB",
+        "start:admin": "cd admin-dashboard && npm run dev",
+        "start:kong": "cd docker-kong/compose && cross-env KONG_DATABASE=postgres docker-compose --profile database up",
+        "stop:kong": "cd docker-kong/compose && docker-compose down",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
