@@ -24,3 +24,10 @@ Check messages in a topic
 
 Alter the topic, change partition:
 ./kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic topping --partitions 6
+
+
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order --from-beginning
+./kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic order --partitions 6
+
+
+stripe listen -f localhost:8000/api/order/payments/webhook

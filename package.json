@@ -11,17 +11,25 @@
     },
     "scripts": {
         "dev": "npm run start:all",
-        "start:all": "concurrently \"npm run start:auth\" \"npm run start:catalog\" \"npm run start:admin\" \"npm run start:kong\" \"npm run start:broker\"",
-        "stop:all": "concurrently \"npm run stop:auth\" \"npm run stop:catalog\" \"npm run stop:kong\" \"npm run stop:broker\"",
+        "start:all": "concurrently \"npm run start:ui\" \"npm run start:services\" \"npm run start:infra\" --names \"UI,SERVICES,INFRA\"",
+        "stop:all": "concurrently \"npm run stop:ui\" \"npm run stop:services\" \"npm run stop:infra\" --names \"UI,SERVICES,INFRA\"",
+        "start:ui": "npm run start:admin",
+        "stop:ui": "echo 'No stop needed for UI'",
+        "start:services": "concurrently \"npm run start:auth\" \"npm run start:catalog\" \"npm run start:websocket\" --names \"AUTH,CATALOG,WEBSOCKET\"",
+        "stop:services": "concurrently \"npm run stop:auth\" \"npm run stop:catalog\" \"npm run stop:websocket\" --names \"AUTH,CATALOG,WEBSOCKET\"",
         "start:auth": "cd auth-service && docker ps -q -f name=mernpg-container >nul 2>&1 && npm run dev || (npm run start:DB && npm run dev)",
         "stop:auth": "cd auth-service && npm run stop:DB",
         "start:catalog": "cd \"catalog service\" && docker ps -q -f name=mernmongo-container >nul 2>&1 && npm run dev || (npm run start:DB && npm run dev)",
         "stop:catalog": "cd \"catalog service\" && npm run stop:DB",
-        "start:admin": "cd admin-dashboard && npm run dev",
+        "start:websocket": "cd websocket-service && npm run dev",
+        "stop:websocket": "cd websocket-service && npm run stop",
+        "start:infra": "concurrently \"npm run start:kong\" \"npm run start:broker\" --names \"KONG,BROKER\"",
+        "stop:infra": "concurrently \"npm run stop:kong\" \"npm run stop:broker\" --names \"KONG,BROKER\"",
         "start:kong": "cd docker-kong/compose && cross-env KONG_DATABASE=postgres docker-compose --profile database up",
         "stop:kong": "cd docker-kong/compose && docker-compose down",
         "start:broker": "cd brokers && docker-compose up -d",
         "stop:broker": "cd brokers && docker-compose down",
+        "start:admin": "cd admin-dashboard && npm run dev",
         "test": "echo \"Error: no test specified\" && exit 1"
     }
 }
