@@ -21,3 +21,6 @@
 [submodule "websocket-service"]
 	path = websocket-service
 	url = https://github.com/roshan798/pizza-delivery-websocket-service
+[submodule "notification-service"]
+	path = notification-service
+	url = https://github.com/roshan798/pizza-app-notification-service
